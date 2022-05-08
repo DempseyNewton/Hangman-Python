@@ -1,4 +1,3 @@
-from operator import le
 from art import hangman_stages
 
 def update_display(stage, word):
