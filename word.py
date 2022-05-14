@@ -1,5 +1,5 @@
 from random import choice
-files = ['computer-science']
+files = ['computer-science', 'tech-CEOs', 'programming']
 
 def get_words(name):
     if name in files:
