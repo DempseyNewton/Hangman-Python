@@ -1,11 +1,12 @@
 from art import hangman_stages
+from word import pick_random_word, valid_theme, display_themes
 
 def update_display(stage, word):
     print(stage)
     print(word)
 
 def get_word(theme):
-    return 'Hello'
+    return pick_random_word(theme)
 
 def word_guessed(correct_word, current_word):
     if correct_word.lower() == current_word.lower():
@@ -27,7 +28,14 @@ while game_running:
     ''' While the game is running, we want the user to pick the right letter while 
     the word isn't finished and the user hasn't used up his tries'''
     
-    word = get_word('Greeting')
+    display_themes()
+    theme = None
+    
+    while not valid_theme(theme):
+        theme = input("What theme would you like to play with? ")
+    
+    word = pick_random_word(theme)
+    
     current_word = []
     for i in range(len(word)):
         current_word.append('_')

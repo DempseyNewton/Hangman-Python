@@ -18,3 +18,10 @@ def pick_random_word(theme):
         print("Coudn't get a word.")
         return None
     return choice(words)
+
+def valid_theme(theme):
+    return theme in files
+
+def display_themes():
+    themes = ", ".join(files)
+    print(f"Themes: {themes}.")
