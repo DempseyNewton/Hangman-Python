@@ -1,10 +1,18 @@
 from random import choice
-files = ['computer-science', 'tech-CEOs', 'programming']
+from os import listdir
+
+def get_files():
+    files = []
+    for file in listdir("themes"):
+        files.append(file[:-4])
+    return files
+
+files = get_files()
 
 def get_words(name):
     if name in files:
         try:
-            file = open(f"{name}.csv")
+            file = open(f"themes/{name}.csv")
             content = file.read()
             return content.split(',')
         except FileNotFoundError:

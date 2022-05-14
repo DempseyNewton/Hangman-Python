@@ -45,7 +45,7 @@ while game_running:
         current_stage = hangman_stages[tries]
         update_display(current_stage, word_string(current_word))
         
-        user_guess = input('Guess a letter in the word: ')
+        user_guess = input("Guess a letter in the word: ")
         contained_letter = False
         if valid_guess(user_guess):
             for i in range(len(word)):
@@ -61,9 +61,9 @@ while game_running:
         print("Congratulations, you guessed the word!")
         update_display(current_stage, word_string(current_word))
     else:
-        # In the case that the user lost display the final stage
+        # In the case that the user lost, display the final stage
         update_display(hangman_stages[-1], word_string(current_word))
 
-    replay = input('Do you wish to play again? y/n: ').lower()
+    replay = input("Do you wish to play again? y/n: ").lower()
     if not replay == 'y':
         game_running = False
